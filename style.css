@@ -235,6 +235,9 @@ body {
 .product-tag.tag--plain {
   background: #f0f0ec; color: #555;
 }
+.product-tag.tag--green {
+  background: #e8f4e8; color: #2d6a2d;
+}
 .price { font-size: 1.1rem; font-weight: 700; }
 .price--lg { font-size: 1.4rem; font-weight: 700; }
 

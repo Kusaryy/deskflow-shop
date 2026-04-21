@@ -3,7 +3,7 @@ const products = {
     name: 'Merino Desk Mat XL',
     price: 49,
     tag: 'Bestseller',
-    img: 'https://picsum.photos/seed/deskmat42/800/600',
+    img: 'https://images.unsplash.com/photo-1518118014377-ce94f3eae7af?w=900&h=600&fit=crop&auto=format&q=85',
     desc: 'Die Merino Desk Mat XL ist aus hochwertigem Wollfilz gefertigt und schützt deinen Schreibtisch vor Kratzern. Die XL-Größe von 80×40 cm bietet genug Platz für Tastatur, Maus und Notizbuch — auch für Dual-Monitor-Setups ideal.',
     details: [
       'Maße: 80 × 40 cm, 5 mm stark',
@@ -17,7 +17,7 @@ const products = {
     name: 'Oak Monitor Stand',
     price: 89,
     tag: 'Neu',
-    img: 'https://picsum.photos/seed/oakwood87/800/600',
+    img: 'https://images.unsplash.com/photo-1639244734551-c8ff9ffe500e?w=900&h=600&fit=crop&auto=format&q=85',
     desc: 'Der Oak Monitor Stand hebt deinen Bildschirm auf ergonomische Augenhöhe und schafft darunter ordentlich Platz für Tastatur, Festplatten oder Kabelboxen. Der integrierte USB-C Hub macht Kabelsalat überflüssig.',
     details: [
       'Material: FSC-zertifiziertes Massivholz (Eiche)',
@@ -27,32 +27,60 @@ const products = {
       'Maße: 60 × 25 × 10 cm',
     ],
   },
-  cable: {
-    name: 'Cable Clip Set (12er)',
-    price: 19,
+  lamp: {
+    name: 'Arc Desk Lamp',
+    price: 69,
     tag: 'Top bewertet',
-    img: 'https://picsum.photos/seed/cablealum19/800/600',
-    desc: 'Das Cable Clip Set hält bis zu 12 Kabel sauber an Ort und Stelle — am Schreibtisch, unter dem Tisch oder an der Wand. Der starke Magnet hält auch schwere Ladekabel, ohne zu verrutschen.',
+    img: 'https://images.unsplash.com/photo-1766524555120-9c2e886c72f5?w=900&h=600&fit=crop&auto=format&q=85',
+    desc: 'Die Arc Desk Lamp kombiniert warmes, augenschonendes LED-Licht mit einem modernen Bogendesign. Stufenlos dimmbar per Touch, mit Memoryfunktion und integriertem USB-A Ladeport für Smartphone oder Kopfhörer.',
     details: [
-      '12 Clips aus recyceltem Aluminium',
-      'Haftkraft: bis zu 500g pro Clip',
-      '3M-Klebepad — rückstandsfrei entfernbar',
-      'Kabelstärke: kompatibel mit 3–12 mm Durchmesser',
-      'Farbe: Space Grey / Silver / Black (Set gemischt)',
+      '3 Farbtemperaturen: 2700K / 4000K / 6500K',
+      'Stufenlose Dimmung per Touch (10%–100%)',
+      'Integrierter USB-A Ladeport (5W)',
+      'Energieverbrauch: max. 12W, Lebensdauer 30.000h',
+      'Schwenkbarer Arm, 360° drehbarer Kopf',
     ],
   },
   notebook: {
     name: 'Leather Notebook Holder',
     price: 35,
     tag: 'Klassiker',
-    img: 'https://picsum.photos/seed/leather63/800/600',
+    img: 'https://images.unsplash.com/photo-1761322572550-967ea8c0bfd9?w=900&h=600&fit=crop&auto=format&q=85',
     desc: 'Der Leather Notebook Holder hält dein A5-Notizbuch griffbereit auf dem Schreibtisch und gibt ihm einen festen Platz neben dem Laptop. Das pflanzlich gegerbte Leder entwickelt über die Jahre eine schöne Patina.',
     details: [
       'Material: Vegetabil gegerbtes Vollnarbenleder, 2 mm stark',
       'Passend für alle A5-Notizbücher (max. 15 mm Dicke)',
-      'Stiftschlaufe für 1 Stift / Marker',
+      'Stiftschlaufe für 1 Stift / Marker inklusive',
       'Farben: Cognac, Schwarz, Dunkelbraun',
       'Handgefertigt in Wien, Österreich',
+    ],
+  },
+  pen: {
+    name: 'Bamboo Pen Holder',
+    price: 24,
+    tag: 'Nachhaltig',
+    img: 'https://images.unsplash.com/photo-1751107807635-a2ac6035e8dd?w=900&h=600&fit=crop&auto=format&q=85',
+    desc: 'Der Bamboo Pen Holder hält deinen Schreibtisch aufgeräumt und sieht dabei noch gut aus. Fünf Fächer für Stifte, Scheren, Lineale und Kleinkram — aus schnell nachwachsendem FSC-zertifiziertem Bambus gefertigt.',
+    details: [
+      'Material: FSC-zertifizierter Bambus',
+      '5 Fächer: 3 rund (Ø 4 cm) + 2 eckig (6×4 cm)',
+      'Rutschfeste Unterseite, wasserabweisend lackiert',
+      'Maße: 18 × 9 × 10 cm',
+      'Vollständig kompostierbar / recycelbar',
+    ],
+  },
+  cable: {
+    name: 'Cable Clip Set (12er)',
+    price: 19,
+    tag: 'Set',
+    img: 'https://images.unsplash.com/photo-1644463589256-02679b9c0767?w=900&h=600&fit=crop&auto=format&q=85',
+    desc: 'Das Cable Clip Set hält bis zu 12 Kabel sauber an Ort und Stelle — am Schreibtisch, unter dem Tisch oder an der Wand. Der starke 3M-Kleber hält auch schwere Ladekabel, ohne zu verrutschen oder Farbe zu beschädigen.',
+    details: [
+      '12 Clips aus recyceltem Aluminium',
+      '3M-Klebepad — rückstandsfrei entfernbar',
+      'Kabelstärke: kompatibel mit 3–12 mm Durchmesser',
+      'Haftkraft: bis zu 500g pro Clip',
+      'Farbe: Space Grey / Silver / Black (Set gemischt)',
     ],
   },
 };
@@ -84,7 +112,7 @@ function updateCartUI() {
     return;
   }
 
-  footerEl.style.display = 'block';
+  footerEl.style.display = 'flex';
   const total = cart.reduce((s, i) => s + i.price, 0);
   document.getElementById('cartTotal').textContent = `€ ${total.toFixed(2).replace('.', ',')}`;
 
@@ -140,7 +168,6 @@ function closeProduct() {
   document.body.style.overflow = '';
 }
 
-/* Keyboard: Escape closes modal */
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') { closeProduct(); closeCart(); }
 });
