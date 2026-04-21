@@ -147,23 +147,15 @@ body {
 .products h2 { text-align: center; font-size: 2rem; font-weight: 700; letter-spacing: -.02em; }
 .section-sub { text-align: center; color: var(--text-muted); margin-top: 8px; margin-bottom: 48px; }
 
-/*
- * Subgrid: every card exposes 5 row tracks to the parent grid so that
- * image / tag / title / description / footer all snap to the same
- * horizontal baseline across every card in a row.
- */
 .products__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  grid-template-rows: 220px auto auto 1fr auto; /* img · tag · title · desc · footer */
   gap: 24px;
 }
 
 .product-card {
-  /* span all 5 row tracks and expose them as subgrid */
-  grid-row: span 5;
-  display: grid;
-  grid-template-rows: subgrid;
+  display: flex;
+  flex-direction: column;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -178,8 +170,9 @@ body {
   box-shadow: var(--shadow);
 }
 
-/* Row 1 — image */
 .product-card__img {
+  height: 220px;
+  flex-shrink: 0;
   overflow: hidden;
 }
 .product-card__img img {
@@ -190,39 +183,42 @@ body {
 }
 .product-card:hover .product-card__img img { transform: scale(1.05); }
 
-/* Rows 2–5 live inside __body which also subgrids */
 .product-card__body {
-  display: grid;
-  grid-row: span 4;
-  grid-template-rows: subgrid;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   padding: 20px;
-  row-gap: 0;
 }
 
-/* Row 2 — tag */
-.product-card__body .product-tag { align-self: start; margin-bottom: 0; }
+/* Tag: fixed line-height so it always takes exactly one line */
+.product-card__body .product-tag {
+  display: block;
+  min-height: 22px;
+  margin-bottom: 8px;
+}
 
-/* Row 3 — title */
+/* Title: reserve space for up to 2 lines so all cards align below it */
 .product-card__body h3 {
   font-size: 1rem; font-weight: 600;
-  align-self: start; padding-top: 8px;
+  min-height: 2.6em;
+  margin-bottom: 8px;
 }
 
-/* Row 4 — description */
+/* Description fills remaining space → pushes footer to the very bottom */
 .product-card__body > p {
   font-size: .85rem; color: var(--text-muted);
-  align-self: start;
-  padding: 8px 0 16px;
+  flex: 1;
+  margin-bottom: 16px;
 }
 
-/* Row 5 — price + button, always on the same baseline */
+/* Footer always at the bottom, price + button on one line */
 .product-card__footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  align-self: end;
-  padding-top: 4px;
+  padding-top: 14px;
   border-top: 1px solid var(--border);
+  margin-top: auto;
 }
 
 .product-tag {
