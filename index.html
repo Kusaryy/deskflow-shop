@@ -52,9 +52,9 @@
       <p class="section-sub">Handgefertigt in Deutschland. Nachhaltige Materialien.</p>
       <div class="products__grid">
 
-        <div class="product-card">
-          <div class="product-card__img" style="background:#f0ede8;">
-            <div class="product-illustration mat-ill"></div>
+        <article class="product-card" onclick="openProduct('mat')" tabindex="0" role="button" aria-label="Merino Desk Mat XL details">
+          <div class="product-card__img">
+            <img src="https://picsum.photos/seed/deskmat42/600/400" alt="Merino Desk Mat XL" loading="lazy" />
           </div>
           <div class="product-card__body">
             <span class="product-tag">Bestseller</span>
@@ -62,14 +62,14 @@
             <p>Wollfilz-Unterlage 80×40 cm. Rutschfest, wasserabweisend, in 5 Farben.</p>
             <div class="product-card__footer">
               <span class="price">€ 49,00</span>
-              <button class="btn btn--sm" onclick="addToCart('Merino Desk Mat XL', 49)">In den Warenkorb</button>
+              <button class="btn btn--sm" onclick="event.stopPropagation(); addToCart('Merino Desk Mat XL', 49)">In den Warenkorb</button>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img" style="background:#e8edf0;">
-            <div class="product-illustration stand-ill"></div>
+        <article class="product-card" onclick="openProduct('stand')" tabindex="0" role="button" aria-label="Oak Monitor Stand details">
+          <div class="product-card__img">
+            <img src="https://picsum.photos/seed/oakwood87/600/400" alt="Oak Monitor Stand" loading="lazy" />
           </div>
           <div class="product-card__body">
             <span class="product-tag">Neu</span>
@@ -77,14 +77,14 @@
             <p>Massivholz-Monitorständer mit USB-C Hub und verstecktem Kabelkanal.</p>
             <div class="product-card__footer">
               <span class="price">€ 89,00</span>
-              <button class="btn btn--sm" onclick="addToCart('Oak Monitor Stand', 89)">In den Warenkorb</button>
+              <button class="btn btn--sm" onclick="event.stopPropagation(); addToCart('Oak Monitor Stand', 89)">In den Warenkorb</button>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img" style="background:#ede8f0;">
-            <div class="product-illustration cable-ill"></div>
+        <article class="product-card" onclick="openProduct('cable')" tabindex="0" role="button" aria-label="Cable Clip Set details">
+          <div class="product-card__img">
+            <img src="https://picsum.photos/seed/cablealum19/600/400" alt="Cable Clip Set" loading="lazy" />
           </div>
           <div class="product-card__body">
             <span class="product-tag">Top bewertet</span>
@@ -92,24 +92,25 @@
             <p>Magnetische Kabelhalter aus recyceltem Aluminium. Selbstklebend.</p>
             <div class="product-card__footer">
               <span class="price">€ 19,00</span>
-              <button class="btn btn--sm" onclick="addToCart('Cable Clip Set', 19)">In den Warenkorb</button>
+              <button class="btn btn--sm" onclick="event.stopPropagation(); addToCart('Cable Clip Set', 19)">In den Warenkorb</button>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img" style="background:#f0f0e8;">
-            <div class="product-illustration notebook-ill"></div>
+        <article class="product-card" onclick="openProduct('notebook')" tabindex="0" role="button" aria-label="Leather Notebook Holder details">
+          <div class="product-card__img">
+            <img src="https://picsum.photos/seed/leather63/600/400" alt="Leather Notebook Holder" loading="lazy" />
           </div>
           <div class="product-card__body">
+            <span class="product-tag tag--plain">Klassiker</span>
             <h3>Leather Notebook Holder</h3>
             <p>A5 Notizbuchhalter aus pflanzlich gegerbtem Leder. Inkl. Stiftschlaufe.</p>
             <div class="product-card__footer">
               <span class="price">€ 35,00</span>
-              <button class="btn btn--sm" onclick="addToCart('Leather Notebook Holder', 35)">In den Warenkorb</button>
+              <button class="btn btn--sm" onclick="event.stopPropagation(); addToCart('Leather Notebook Holder', 35)">In den Warenkorb</button>
             </div>
           </div>
-        </div>
+        </article>
 
       </div>
     </div>
@@ -189,7 +190,28 @@
     </div>
   </footer>
 
-  <!-- CART MODAL -->
+  <!-- PRODUCT MODAL -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeProduct()"></div>
+  <div class="modal" id="productModal" role="dialog" aria-modal="true">
+    <button class="modal__close" onclick="closeProduct()" aria-label="Schließen">✕</button>
+    <div class="modal__inner">
+      <div class="modal__img-wrap">
+        <img id="modalImg" src="" alt="" />
+      </div>
+      <div class="modal__content">
+        <span class="product-tag" id="modalTag"></span>
+        <h2 id="modalName"></h2>
+        <p class="modal__desc" id="modalDesc"></p>
+        <ul class="modal__details" id="modalDetails"></ul>
+        <div class="modal__footer">
+          <span class="price price--lg" id="modalPrice"></span>
+          <button class="btn btn--lg" id="modalCartBtn">In den Warenkorb</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CART DRAWER -->
   <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
   <div class="cart-drawer" id="cartDrawer">
     <div class="cart-drawer__header">
