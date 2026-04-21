@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DeskFlow — Minimalist Desk Accessories</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">DeskFlow</a>
+      <ul class="nav__links">
+        <li><a href="#products">Produkte</a></li>
+        <li><a href="#features">Vorteile</a></li>
+        <li><a href="#reviews">Bewertungen</a></li>
+      </ul>
+      <button class="btn btn--sm cart-btn" onclick="openCart()">
+        Warenkorb <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__content">
+      <span class="badge">Neu 2026</span>
+      <h1>Dein Schreibtisch.<br/>Dein Fokus.</h1>
+      <p>Minimalistisches Desk-Zubehör für Menschen, die tiefe Arbeit ernst nehmen. Weniger Ablenkung, mehr Output.</p>
+      <a href="#products" class="btn btn--lg">Jetzt entdecken</a>
+    </div>
+    <div class="hero__visual">
+      <div class="hero__mockup">
+        <div class="desk-scene">
+          <div class="desk-mat"></div>
+          <div class="desk-monitor"></div>
+          <div class="desk-stand"></div>
+          <div class="desk-cable"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products" id="products">
+    <div class="container">
+      <h2>Unsere Produkte</h2>
+      <p class="section-sub">Handgefertigt in Deutschland. Nachhaltige Materialien.</p>
+      <div class="products__grid">
+
+        <div class="product-card">
+          <div class="product-card__img" style="background:#f0ede8;">
+            <div class="product-illustration mat-ill"></div>
+          </div>
+          <div class="product-card__body">
+            <span class="product-tag">Bestseller</span>
+            <h3>Merino Desk Mat XL</h3>
+            <p>Wollfilz-Unterlage 80×40 cm. Rutschfest, wasserabweisend, in 5 Farben.</p>
+            <div class="product-card__footer">
+              <span class="price">€ 49,00</span>
+              <button class="btn btn--sm" onclick="addToCart('Merino Desk Mat XL', 49)">In den Warenkorb</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img" style="background:#e8edf0;">
+            <div class="product-illustration stand-ill"></div>
+          </div>
+          <div class="product-card__body">
+            <span class="product-tag">Neu</span>
+            <h3>Oak Monitor Stand</h3>
+            <p>Massivholz-Monitorständer mit USB-C Hub und verstecktem Kabelkanal.</p>
+            <div class="product-card__footer">
+              <span class="price">€ 89,00</span>
+              <button class="btn btn--sm" onclick="addToCart('Oak Monitor Stand', 89)">In den Warenkorb</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img" style="background:#ede8f0;">
+            <div class="product-illustration cable-ill"></div>
+          </div>
+          <div class="product-card__body">
+            <span class="product-tag">Top bewertet</span>
+            <h3>Cable Clip Set (12er)</h3>
+            <p>Magnetische Kabelhalter aus recyceltem Aluminium. Selbstklebend.</p>
+            <div class="product-card__footer">
+              <span class="price">€ 19,00</span>
+              <button class="btn btn--sm" onclick="addToCart('Cable Clip Set', 19)">In den Warenkorb</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img" style="background:#f0f0e8;">
+            <div class="product-illustration notebook-ill"></div>
+          </div>
+          <div class="product-card__body">
+            <h3>Leather Notebook Holder</h3>
+            <p>A5 Notizbuchhalter aus pflanzlich gegerbtem Leder. Inkl. Stiftschlaufe.</p>
+            <div class="product-card__footer">
+              <span class="price">€ 35,00</span>
+              <button class="btn btn--sm" onclick="addToCart('Leather Notebook Holder', 35)">In den Warenkorb</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="container">
+      <h2>Warum DeskFlow?</h2>
+      <div class="features__grid">
+        <div class="feature">
+          <div class="feature__icon">🌿</div>
+          <h4>Nachhaltig</h4>
+          <p>Zertifizierte Materialien, CO₂-neutral versendet, plastikfreie Verpackung.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">🇩🇪</div>
+          <h4>Made in Germany</h4>
+          <p>Produziert in kleinen Manufakturen in Deutschland und Österreich.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">🔄</div>
+          <h4>30-Tage-Rückgabe</h4>
+          <p>Nicht zufrieden? Kein Problem. Kostenlose Rückgabe innerhalb von 30 Tagen.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">🚚</div>
+          <h4>Kostenloser Versand</h4>
+          <p>Gratis Versand ab € 50 Bestellwert. Lieferung in 2–3 Werktagen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <h2>Was Kunden sagen</h2>
+      <div class="reviews__grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Die Desk Mat hat meinen Schreibtisch komplett verwandelt. Endlich kein Kabelsalat mehr."</p>
+          <span class="reviewer">— Lena K., Berlin</span>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Oak Monitor Stand ist ein Traum. Wirkt hochwertig, der USB-Hub ist super praktisch."</p>
+          <span class="reviewer">— Markus T., München</span>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★☆</div>
+          <p>"Sehr schnelle Lieferung, tolle Verpackung. Cable Clips halten bombenfest."</p>
+          <span class="reviewer">— Sarah M., Hamburg</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <strong>DeskFlow</strong>
+          <p>Minimalist Desk Accessories</p>
+        </div>
+        <div>
+          <p><a href="#">Impressum</a></p>
+          <p><a href="#">Datenschutz</a></p>
+          <p><a href="#">Kontakt</a></p>
+        </div>
+        <div>
+          <p>© 2026 DeskFlow. Alle Rechte vorbehalten.</p>
+          <p>info@deskflow.de</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART MODAL -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer__header">
+      <h3>Warenkorb</h3>
+      <button onclick="closeCart()" class="cart-close">✕</button>
+    </div>
+    <div class="cart-drawer__items" id="cartItems">
+      <p class="cart-empty">Dein Warenkorb ist leer.</p>
+    </div>
+    <div class="cart-drawer__footer" id="cartFooter" style="display:none;">
+      <div class="cart-total">
+        Gesamt: <strong id="cartTotal">€ 0,00</strong>
+      </div>
+      <button class="btn btn--lg" style="width:100%;" onclick="checkout()">Zur Kasse</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
